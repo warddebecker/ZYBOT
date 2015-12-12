@@ -20,15 +20,22 @@ You can also find the other boot files in the .zip file (xillinux-eval-zybo-1.3c
 After this you should have 4 files in your boot partition, and you can now put the SD card in the ZYBO and it should be able to boot off of it, make sure the jumper on the zybo is set to SD.
 
 
+
+OUTDATED:
 SOFTWARE: install libfreenect ( use manual install)
 http://openkinect.org/wiki/Getting_Started
 
 FIX:Undefined reference to libusb_get_parent() , while compiling freenect
 http://stackoverflow.com/questions/28835794/undefined-reference-to-libusb-get-parent-compiling-freenect
+---END OUTDATED
 
 
 
+NOTES( fixing issues):
+to get the motion package, on the zybo open the software manager, go to edit and select all ubuntu softwre sources.
+after this, you can use "sudo apt-get update" and "sudo apt-get install motion".
 
-NOTES:
-To get the motion package, on the zybo open the software manager, go to edit and select all ubuntu softwre sources.
-After this, you can use "sudo apt-get update" and "sudo apt-get install motion".
+to fix this error:
+could not get lock /var/lib/dpkg/lock - open (11 resource temporarily unavailable)
+use this: rm /var/lib/dpkg/lock
+
